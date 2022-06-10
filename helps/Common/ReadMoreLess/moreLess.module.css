@@ -1,0 +1,18 @@
+.show-box > div, .show-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.show-box img {
+    max-width: 46px;
+}
+
+.show-box span {
+    font-family: MontserratRegular, sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    color: rgba(107, 159, 128, 1);
+}

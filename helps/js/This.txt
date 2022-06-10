@@ -1,0 +1,73 @@
+Значение this вычисляется во время выполнения кода и зависит от контекста.
+
+Ещё раз заметим, что свойство объекта может быть либо свойством-аксессором (с методами get/set), либо свойством-данным (со значением value).
+
+let obj = {
+x:24,
+z:49,
+}; // Создаём новый объект
+
+// Пример добавления свойства к объекту через defineProperty()
+// с дескриптором данных
+Object.defineProperty(o, 'name', {
+  value: 'Valod',
+  writable: false, // chi karox poxvel arjeqy
+  enumerable: false, // ciklerum chi erevum
+  configurable: false // chi karox poxvelt typey ev chi karox jnjvel
+});
+
+console.log(name)
+
+fhtftrh
+console.log(o[key])
+} */
+
+
+
+let user = {
+  get name() {
+    return this._name;
+  },
+
+  set name(value) {
+    if (value.length < 4) {
+      alert("Имя слишком короткое, должно быть более 4 символов");
+      return;
+    }
+    this._name = value;
+  }
+};
+
+user.name = "Pete";
+alert(user.name); // Pete
+
+user.name = ""; // Имя слишком короткое...
+
+
+function logPerson (t) {
+console.log(`Person : ${this.name} , ${this.age} ,${t}`);
+}
+
+const person1 ={
+name:"valod",
+age:45
+};
+
+const person2 ={
+name:'gugo',
+age:78
+};
+
+function bind(context, func){
+
+	return function (...args){
+		func.call(context,args);
+	}
+
+}
+
+let v = bind(person1, logPerson)
+v(7)
+
+
+Object this, new , difineProperty , getter/setter , call/applay/bind

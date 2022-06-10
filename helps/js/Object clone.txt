@@ -1,0 +1,49 @@
+const obj2 = {
+name:'Suren',
+}  
+
+const obj1 = {...obj2}
+
+
+
+
+  
+If you do not use Dates, functions, undefined, Infinity, RegExps, Maps, Sets, Blobs, FileLists, ImageDatas, sparse Arrays, Typed Arrays or other complex types within your object, a very simple one liner to deep clone an object is:
+
+const a = {
+        string: 'string',
+        number: 123,
+        bool: false,
+        nul: null,
+        date: new Date(),  // stringified
+        undef: undefined,  // lost
+        inf: Infinity,  // forced to 'null'
+        re: /.*/,  // lost
+        obj:{
+            name:'gugo'
+        }
+    }
+    console.log(a);
+
+    // console.log(typeof a.date);  // Date object
+    const clone = JSON.parse(JSON.stringify(a));
+    a.obj.name = 'karlen';
+    console.log(clone);
+
+    console.log(a.obj === clone.obj)
+
+    console.log(a.obj.name,clone.obj.name)
+    // console.log(typeof clone.date);  // result of .toISOString()
+
+
+function fail() {
+  'use strict';
+  obj.foo = 'sparky'; // выбросит TypeError
+  delete obj.quaxxor; // выбросит TypeError
+  obj.sparky = 'arf'; // выбросит TypeError
+}
+
+fail();
+
+
+Object clone ...obj, loop, JSON, assign / hasOwn / create / delete / freeze ,isFrozen/

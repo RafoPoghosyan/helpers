@@ -1,0 +1,19 @@
+.stars-container {
+    display: flex;
+    grid-gap: 11px;
+
+}
+
+.star-img {
+    max-width: 22px;
+}
+
+.star-style {
+    filter: brightness(0) saturate(100%) invert(81%) sepia(21%) saturate(3606%) hue-rotate(310deg) brightness(104%) contrast(101%);
+}
+@media screen and (max-width: 767px) {
+
+    .star-img {
+        max-width: 18px;
+    }
+}
